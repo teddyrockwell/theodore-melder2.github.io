@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Theo's Spectacular Website</title>
+      <style>
+        body {
+            background: rgb(252, 175, 51);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: sans-serif;
+        }
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            background: rgb(71, 252, 51);
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        nav h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        nav ul {
+            list-style-image: none;
+        }
+        nav li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            background: rgb(245, 238, 219);
+            display: flex;
+        }
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar img {
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        h2, h3 {
+            margin: 0px;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div id="all-contents"> 
+            <nav>
+                <h1>Theo's Spectacular Website</h1>
+                <ul>
+                    <li>
+                      <a href="index.html"> Home </a>
+                    </li>
+                    <li>
+                      <a href="portfolio.html"> Portfolio </a>
+                  </li>
+                </ul>
+            </nav>
+    
+            <main>
+                <div class="sidebar">
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQFVqsLv8CyhRA/profile-displayphoto-shrink_800_800/0/1656382334830?e=2147483647&v=beta&t=mxHK6Tg-o9cQX4TxF-K1q_dccpo85xrniMIda0jS81Q"/>
+                </div>
+            
+                <div class="content">
+                  <h2>Theodore David Melder Jr</h2>
+                  <p>POLP Co-Founder</p>
+                  <p>Developer</p>
+                  <div class="interests">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>POLP</li>
+                        <li>Programming</li>
+                        <li>Music Production</li>
+                        <li>Philosophy</li>
+                        <li>Blockchain & Web3 Technology</li>
+                        <li>Medicinal Mushrooms</li>
+                    </ul>
+                </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
