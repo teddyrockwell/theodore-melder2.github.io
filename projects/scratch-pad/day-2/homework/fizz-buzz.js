@@ -13,6 +13,18 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
 
+    // prints numbers from 1 to 100, for loop
+
+    for(let i = 1; i <= 100; i++){ /// remember to start at 1
+        let result = ""; // empty variable for printing adding values
+        if (i % 3 == 0 ){ // if multiple of three 
+            result += "Fizz"; // print Fizz instead of number
+        }
+        if (i % 5 == 0){ // if multiple of five
+            result += "Buzz"; // print Buzz instead of number
+        }
+        console.log(result || i); // print the result or the iteration
+    }
 
 
     // YOUR CODE GOES ABOVE HERE //

@@ -36,6 +36,17 @@
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
     
+    // return a greeeting based on time of day
+    // if statement
+    if (hour >= 0 && hour <= 11){ // morning hours
+        console.log("Good Morning!");
+    } else if (hour >= 12 && hour <= 16){ // afternoon hours edge case
+        console.log("Good Afternoon!");
+    } else if (hour >= 17 && hour <= 21){ // evening hours edge case
+        console.log("Good Evening!");
+    } else { // everything else, must be night if not any other hours
+        console.log("Good Night!");
+    }
     
     
     
