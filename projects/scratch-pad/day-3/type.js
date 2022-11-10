@@ -15,7 +15,15 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+
+
+    // return true if an array, false otherwise
+if (Array.isArray(value) === true){
+    return true;
+}
+    // can use if statement for true and false as default.
+
+    return false;
     
     
     // YOUR CODE ABOVE HERE //
@@ -32,7 +40,8 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    // can use Object.prototype.toString() to do similar thing as .isArray
+    return Object.prototype.toString(value) === "[object Object]";
     
     
     // YOUR CODE ABOVE HERE //

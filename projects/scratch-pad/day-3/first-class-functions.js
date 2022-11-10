@@ -15,8 +15,9 @@ function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
     
+    // return function that...
     
-    
+    // test usually means evaluate true or false
     // YOUR CODE ABOVE HERE //
 }
 
@@ -72,7 +73,7 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
+    // example similar to filterNums example
     
     
     // YOUR CODE ABOVE HERE //
@@ -91,7 +92,7 @@ function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
     
-    
+    // example similar to filterNumber example
     
     // YOUR CODE ABOVE HERE //
 }
