@@ -34,22 +34,28 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
+function makeContact(id, nameFirst, nameLast) { // Must Solve First - FACTORY FUNCTION => 
 
 } 
 
 
-function makeContactList() {
+function makeContactList() { // FACTORY FUNCTION 
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = []; // set equal to empty array
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
+        },
+        addContact: function(contact) {
+            contacts.push(contact); // adding contact to contacts list (contacts array, array holding all contacts)
+        },
+        findContact: function(fullName){ // "Max Gaudin", see if it exists => how to take a fullName and see if it interacts with the data we have, etc.
+
+        },
     }
 }
 

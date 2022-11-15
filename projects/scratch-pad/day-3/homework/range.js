@@ -24,6 +24,19 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
+    // returns array containing all intergers
+
+    // empty array
+
+    // for loop
+
+    // push index to array
+
+    let results = [];
+    for (let i = start; i >= end; i++){
+        results.push(i);
+    }
+    return results; // return array
     
     
     

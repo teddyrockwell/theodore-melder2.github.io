@@ -15,7 +15,10 @@ function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
     
-    // return function that...
+    // return function that tests whether a value is greater than the base
+    return function(value){ // return function with value parameter
+        return value > base; // return value greater than base
+    }
     
     // test usually means evaluate true or false
     // YOUR CODE ABOVE HERE //
@@ -29,7 +32,10 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    // return function that tests whether a value is less than the base
+    return function(value){ // return function with value parameter
+        return value < base; // return value less than base
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -43,7 +49,10 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    // return a function that tests whether a given string starts with the starswith char
+    return function(string){ // return function eval string
+        return (string[0].toUpperCase() === startsWith || string[0].toLowerCase() === startsWith); // if the first index of a string, case insensitive, equals startsWith
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -57,7 +66,10 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    // return a function that tests whether a given string ends with the endsWith char
+    return function(string){ // return function eval string
+        return (string[string.length-1].toUpperCase() === endsWith || string[string.length -1].toLowerCase() === endsWith); // if the last index of a string, case insensitive, equals startsWith
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -75,6 +87,16 @@ function modifyStrings(strings, modify) {
     
     // example similar to filterNums example
     
+    // return the array of strings modified
+
+    // for loop 
+    // empty array
+    let results = [];
+    for (let i = 0; i < strings.length; i++){
+        // push to array, modified strings
+        results.push(modify(strings[i]));
+    }
+    return results; // return results
     
     // YOUR CODE ABOVE HERE //
 }
@@ -91,7 +113,18 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
+    // return true if all tests pass
+    // for loop
+    // empty array
+    let results = [];
+    for (let i = 0; i < strings.length; i++){
+        test(strings[i]); // while looping, test each iteration of strings
+        if(test(strings[0]) == true && test(strings[1]) == true && test(strings[2]) == true){ // if all three tests of strings are true
+            return true; // return true if all true
+        } else{ // edge case
+            return false; //  return false
+        }
+    }
     // example similar to filterNumber example
     
     // YOUR CODE ABOVE HERE //

@@ -39,9 +39,13 @@ if (Array.isArray(value) === true){
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    // can use Object.prototype.toString() to do similar thing as .isArray
-    return Object.prototype.toString(value) === "[object Object]";
+
+    // test date, test array, make sure typeof equals object, and that the value isn't null
+    if((value instanceof Date) === false && Array.isArray(value) === false && typeof value === "object" && value !== null){ 
+        return true; // return true
+    } else { // edge case
+        return false; // return false
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -55,8 +59,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+
+    // test date, make sure typeof equals object, and that value isn't null
+    if(typeof value === "object" && value !== null && (value instanceof Date) === false){ // run various tests together to deteremine if object, then execute next lines
+        return true; // return true
+    } else { // edge case
+        return false; // return false
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -84,7 +93,40 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    // massive if statement chain 
+    // if string => string
+    if(typeof value == "string"){ 
+        return "string"; // return string
+    }  else if (Array.isArray(value) === true){ // if array => array
+        return "array"; // return array
+        // if object => object
+    } else if((value instanceof Date) === false && Array.isArray(value) === false && typeof value === "object" && value !== null){ 
+        return "object"; // return object
+    }
+    // if undefined => undefined
+    else if (typeof value == "undefined"){ 
+        return "undefined"; // return undefined
+    }
+    // if number => number
+    else if (typeof value == "number"){ 
+        return "number"; // return number
+    }
+    // if boolean => boolean 
+    else if (typeof value == "boolean"){
+        return "boolean"; // return boolean
+    }
+    // if null => null
+    else if (value == null){ 
+        return "null"; // return null
+    }
+    // if function => function
+    else if (typeof value == "function"){ 
+        return "function"; // return function
+    }
+    // if date => date
+    else if ((value instanceof Date) === true){ 
+        return "date"; // return date
+    }
     
     
     // YOUR CODE ABOVE HERE //
