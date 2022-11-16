@@ -35,7 +35,12 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) { // Must Solve First - FACTORY FUNCTION => 
+let contact = {};
+    contact.id = id;
+    contact.nameFirst = nameFirst;
+    contact.nameLast = nameLast;
 
+    return contact;
 } 
 
 
@@ -54,7 +59,34 @@ function makeContactList() { // FACTORY FUNCTION
             contacts.push(contact); // adding contact to contacts list (contacts array, array holding all contacts)
         },
         findContact: function(fullName){ // "Max Gaudin", see if it exists => how to take a fullName and see if it interacts with the data we have, etc.
+            // returns the contact object if found in the contacts-list
+                // if statement
 
+                // for loop through contacts to check match
+            for (let i = 0; i < contacts.length; i++){
+                if(fullName === contacts[i].nameFirst + " " + contacts[i].nameLast){ // check if fullName will equal strings concatenated
+                    return contacts[i]; // return contact
+                } else {
+                    return undefined; // or return undefined
+                }
+            } 
+            // or undefined if tbe fullName does not matchy any contact
+        },
+        removeContact: function(contact){
+            contacts.pop(contact); // remove last contact from array
+        },
+        printAllContactNames: function(){
+            // should return string will full names and line breaks = \n
+
+            // create an empty array, push all names to array, then join them with line break (avoiding extra line break)
+            let results = [];
+            // for loop
+            for(let i = 0; i < contacts.length; i++){
+                results.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+            }
+            // join time
+            let allContacts = results.join("\n");
+            return allContacts; // return full list
         },
     }
 }

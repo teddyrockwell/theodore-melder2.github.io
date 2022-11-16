@@ -128,7 +128,6 @@ function typeOf(value) {
         return "date"; // return date
     }
     
-    
     // YOUR CODE ABOVE HERE //
 }
 
