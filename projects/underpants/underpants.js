@@ -21,6 +21,10 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+_.identity = function(value){
+    // return value unchanged
+    return value;
+}
 
 /** _.typeOf
 * Arguments:
@@ -42,6 +46,42 @@ var _ = {};
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.typeOf = function(value){
+    // find typeOf value and return type as a string
+    if(typeof value == "string"){ 
+        return "string"; // return string
+    }  else if (Array.isArray(value) === true){ // if array => array
+        return "array"; // return array
+        // if object => object
+    } else if((value instanceof Date) === false && Array.isArray(value) === false && typeof value === "object" && value !== null){ 
+        return "object"; // return object
+    }
+    // if undefined => undefined
+    else if (typeof value == "undefined"){ 
+        return "undefined"; // return undefined
+    }
+    // if number => number
+    else if (typeof value == "number"){ 
+        return "number"; // return number
+    }
+    // if boolean => boolean 
+    else if (typeof value == "boolean"){
+        return "boolean"; // return boolean
+    }
+    // if null => null
+    else if (value == null){ 
+        return "null"; // return null
+    }
+    // if function => function
+    else if (typeof value == "function"){ 
+        return "function"; // return function
+    }
+    // if date => date
+    else if ((value instanceof Date) === true){ 
+        return "date"; // return date
+    }
+}
+
 
 /** _.first
 * Arguments:
@@ -61,6 +101,9 @@ var _ = {};
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(array, number){
+
+}
 
 /** _.last
 * Arguments:
@@ -129,6 +172,21 @@ var _ = {};
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
+
+_.each = function(collection, callback){
+    // takes in collection and a callback function 
+
+    // determine if collection is an array, if not, then assume object
+    if (Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){ // array calling with for loop
+            callback(collection[i], i, collection); // callback on each element, index, collection (as array)
+        }
+    } else {
+        for (let key in collection){ // object calling with for in loop
+            callback(collection[key], key, collection); // callback on each element, index, collection (as object)
+        }
+    }
+}
 
 
 /** _.unique
