@@ -301,6 +301,39 @@ _.each = function(collection, callback){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, callback){
+    // determine if array
+    if (Array.isArray(collection)){
+
+        // determine if callback wasn't passed in
+        if (callback === undefined){
+            for (let i = 0; i < collection.length; i++){
+                // determine if current item is NOT TRUTHY
+                if (!collection[i]){ // determine if collection[i] 
+                    return false;
+                }
+            }
+        } else { // else it was
+            for (let i = 0; i < collection.length; i++){
+                if (callback(collection[i], i, collection) === false){
+                    return false;
+                }
+            }
+        }
+    } else { // else it's an object
+
+        if (callback === undefined){
+
+        } else { // else it was
+
+        }
+
+    }
+    // what to return here?
+    return true;
+}
+
+
 
 /** _.some
 * Arguments:
@@ -342,6 +375,25 @@ _.each = function(collection, callback){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+
+_.reduce = function(array, callback, seed){
+    // create result variable
+    let result;
+// determine if seed did not receive a value, else it did
+if (seed === undefined){ // zero is a falsey value;
+    result = array[0];
+    for (let i = 1; i < array.length; i++){ // start at second index of array since, 
+        result = callback(result, array[i], i, array);
+
+    }
+} else { // else it did
+    result = seed;
+    for (let i = 0; i < array.length; i++){
+        result = callback(result, array[i], i, array);
+    }
+}
+return result;
+}
 
 
 /** _.extend
