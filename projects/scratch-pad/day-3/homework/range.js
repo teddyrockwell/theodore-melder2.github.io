@@ -25,20 +25,21 @@ function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
     // returns array containing all intergers
-
+    let results =[];
     // empty array
+        // determine if start > end
+        if (start < end){
+            for(let i = start; i <=end; i++){ // for loop
+                results.push(i); // push index to array
+            }
+        } else if (start > end){
+            for(let i = start; i >= end; i--){
+                results.push(i);
+            }
+        } return results;
 
-    // for loop
-
-    // push index to array
-
-    let results = [];
-    for (let i = start; i >= end; i++){
-        results.push(i);
-    }
-    return results; // return array
     
-    
+    // return array    
     
     // YOUR CODE GOES ABOVE HERE //
 }
