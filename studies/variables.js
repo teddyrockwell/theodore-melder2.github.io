@@ -148,15 +148,27 @@ let globalScope = 1;
 if (1 === 1){
     let globalScope = 2;
 }
-
-console.log(globalScope); // => Prints 1 to the console becuase let is block-scoped
-
+console.log(globalScope); // => Prints 1 to the console because let is block-scoped
 
 
-let otherGlobalScope = 2;
+
+const otherGlobalScope = 2;
 
 if (2 === 2){
     const otherGlobalScope = 3;
 }
-
 console.log(otherGlobalScope); // => Prints 2 to the console because const is block-scoped also.
+
+
+
+
+const outside = "outside function";
+
+if (3 === 3){
+    const inside = "inside function";
+    console.log(inside); // => Prints "inside function"
+}
+console.log(inside); // => Prints ReferenceError: inside is not defined
+
+console.log(outside); // => Prints "outside function"
+
